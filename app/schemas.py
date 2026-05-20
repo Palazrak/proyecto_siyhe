@@ -9,3 +9,9 @@ class LoginPayload(BaseModel):
 class PlacaPayload(BaseModel):
     usuario: str = Field(min_length=1, max_length=50)
     placa: str = Field(min_length=1, max_length=20)
+
+
+class AdminCreateUserPayload(BaseModel):
+    usuario: str = Field(min_length=1, max_length=50)
+    password: str = Field(min_length=1, max_length=128)
+    placa: str | None = Field(default=None, max_length=20)
